@@ -1,7 +1,6 @@
 import { useState, useEffect, FormEvent, ChangeEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { UseDispatch } from 'react-redux';
-import { useAppSelector, useAppDispatch } from '@/store/hooks';
+import { useAppSelector } from '@/store/hooks';
 import { selectIsAuthenticated, selectCurrentUser } from '@/features/auth/authSlice';
 import { useGetCurrentUserQuery } from '@/features/auth/authApi';
 import {
@@ -32,7 +31,7 @@ interface RecipeFormData {
 
 const Dashboard = () => {
   const navigate = useNavigate();
-  const dispatch = useAppDispatch();
+  // const dispatch = useAppDispatch();
   const isAuthenticated = useAppSelector(selectIsAuthenticated);
   const user = useAppSelector(selectCurrentUser);
   const [showModal, setShowModal] = useState(false);
