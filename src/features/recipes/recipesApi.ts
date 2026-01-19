@@ -48,7 +48,7 @@ export const recipesApi = createApi({
     // Get single recipe by ID
     getRecipe: builder.query<Recipe, number | string>({
       query: (id) => `/recipes/${id}`,
-      providesTags: (result, error, id) => [{ type: 'Recipe', id }],
+      providesTags: (_result, _error, id) => [{ type: 'Recipe', id }],
     }),
 
     // Add new recipe
@@ -68,7 +68,7 @@ export const recipesApi = createApi({
         method: 'PUT',
         body: recipe,
       }),
-      invalidatesTags: (result, error, { id }) => [{ type: 'Recipe', id }],
+      invalidatesTags: (_result, _error, { id }) => [{ type: 'Recipe', id }],
     }),
 
     // Delete recipe
@@ -77,7 +77,7 @@ export const recipesApi = createApi({
         url: `/recipes/${id}`,
         method: 'DELETE',
       }),
-      invalidatesTags: (result, error, id) => [{ type: 'Recipe', id }],
+      invalidatesTags: (_result, _error, id) => [{ type: 'Recipe', id }],
     }),
   }),
 });
