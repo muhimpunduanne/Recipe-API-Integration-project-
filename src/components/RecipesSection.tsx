@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useGetRecipesQuery } from '@features/recipes/recipesApi';
-import RecipeCard from './RecipeCard';
+import RecipeCard from '@/components/RecipeCard';
 import { motion } from 'framer-motion';
 
 const RecipesSection = () => {

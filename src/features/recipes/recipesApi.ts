@@ -6,7 +6,7 @@ import type {
   CreateRecipeInput,
   UpdateRecipeInput 
 } from '@/types/recipe';
-import type { RootState } from '@store/index';
+import type { RootState } from '@/store/index';
 export const recipesApi = createApi({
   reducerPath: 'recipesApi',
   baseQuery: fetchBaseQuery({ 

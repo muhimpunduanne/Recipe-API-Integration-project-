@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { useLoginMutation } from '@features/auth/authApi';
-import { setCredentials, selectIsAuthenticated } from '@features/auth/authSlice';
+import { useLoginMutation } from '@/features/auth/authApi';
+import { setCredentials, selectIsAuthenticated } from '@/features/auth/authSlice';
 import { motion } from 'framer-motion';
 
 const Login = () => {
@@ -21,7 +21,7 @@ const Login = () => {
     }
   }, [isAuthenticated, navigate]);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e:React.FormEvent) => {
     e.preventDefault();
     setError('');
 
@@ -33,7 +33,7 @@ const Login = () => {
         refreshToken: result.refreshToken,
       }));
       navigate('/dashboard');
-    } catch (err) {
+    } catch (err:any) {
       setError(err.data?.message || 'Invalid credentials. Please try again.');
       console.error('Login error:', err);
     }

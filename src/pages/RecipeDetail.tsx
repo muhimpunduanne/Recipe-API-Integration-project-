@@ -1,13 +1,13 @@
 import { useParams, useNavigate } from 'react-router-dom';
-import { useGetRecipeQuery } from '@features/recipes/recipesApi';
-import Navbar from '@components/Navbar';
-import Footer from '@components/Footer';
+import { useGetRecipeQuery } from '@/features/recipes/recipesApi';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
 
 const RecipeDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { data: recipe, isLoading, isError } = useGetRecipeQuery(id);
+  const { data: recipe, isLoading, isError } = useGetRecipeQuery(Number(id));
 
   if (isLoading) {
     return (

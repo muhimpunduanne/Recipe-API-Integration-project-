@@ -1,17 +1,18 @@
 import { useState, useEffect, FormEvent, ChangeEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAppSelector, useAppDispatch } from '@store/hooks';
-import { selectIsAuthenticated, selectCurrentUser } from '@features/auth/authSlice';
-import { useGetCurrentUserQuery } from '@features/auth/authApi';
+import { UseDispatch } from 'react-redux';
+import { useAppSelector, useAppDispatch } from '@/store/hooks';
+import { selectIsAuthenticated, selectCurrentUser } from '@/features/auth/authSlice';
+import { useGetCurrentUserQuery } from '@/features/auth/authApi';
 import {
   useGetRecipesQuery,
   useAddRecipeMutation,
   useUpdateRecipeMutation,
   useDeleteRecipeMutation,
-} from '@features/recipes/recipesApi';
-import type { Recipe, CreateRecipeInput } from '@types/recipe';
-import Navbar from '@components/Navbar';
-import Footer from '@components/Footer';
+} from '@/features/recipes/recipesApi';
+import type { Recipe, CreateRecipeInput } from '@/types/recipe';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface RecipeFormData {
